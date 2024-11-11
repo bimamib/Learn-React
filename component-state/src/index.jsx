@@ -13,6 +13,10 @@ function IncreaseButton({ increase }) {
   );
 }
 
+function ResetButton({ reset }) {
+  return <div onClick={reset}>- reset</div>;
+}
+
 class CounterApp extends React.Component {
   constructor(props) {
     super(props);
