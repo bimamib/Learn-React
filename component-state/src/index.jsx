@@ -14,7 +14,7 @@ function IncreaseButton({ increase }) {
 }
 
 function ResetButton({ reset }) {
-  return <div onClick={reset}>- reset</div>;
+  return <button onClick={reset}>- reset</button>;
 }
 
 class CounterApp extends React.Component {
@@ -25,6 +25,10 @@ class CounterApp extends React.Component {
     this.state = {
       count: 0,
     };
+
+    // binding event handler
+    this.onIncreaseEventHandler = this.onIncreaseEventHandler.bind(this);
+    this.onResetEventHandler = this.onResetEventHandler.bind(this);
   }
 
   onIncreaseEventHandler() {
@@ -46,7 +50,9 @@ class CounterApp extends React.Component {
   render() {
     return (
       <div>
-        <p>TODO: selesaikan component-nya!</p>
+        <IncreaseButton increase={this.onIncreaseEventHandler} />
+        <CounterDisplay count={this.state.count} />
+        <ResetButton reset={this.onResetEventHandler} />
       </div>
     );
   }
