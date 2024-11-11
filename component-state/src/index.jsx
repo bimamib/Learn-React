@@ -5,6 +5,14 @@ function CounterDisplay({ count }) {
   return <p>{count}</p>;
 }
 
+function IncreaseButton({ increase }) {
+  return (
+    <div>
+      <button onClick={increase}>+ increase</button>
+    </div>
+  );
+}
+
 class CounterApp extends React.Component {
   constructor(props) {
     super(props);
